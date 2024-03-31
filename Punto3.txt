@@ -1,0 +1,6 @@
+Los archivos que estan subidos son 
+.vscode
+README.md
+tp1_1.cpp
+tp1_1.exe
+Los archivos que creo que no son necesarios son .vscode y tp1_1.exe(el ejecutable)
