@@ -14,23 +14,20 @@ void mostrarVariables(int variable){
     printf("La direccion de la variable es: %p \n", &variable);
 
 }
-void Invertir(int a, int b) {
-    int aux=a;
-    a = b;
-    b = aux;
-    printf("Los valores invertidos son: %d %d\n", a, b);
+void Invertir(int* a, int* b) {
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+
 }
 
-// e) Función para devolver los valores ordenados
-void Orden(int a, int b) {
-  int aux;
-  if (a > b) {
-    aux = a;
-    a = b;
-    b = aux;
-     printf("Los valores ordenados son: %d %d\n", a, b);
-  }
-
+void Orden(int* a, int* b) {
+    int aux;
+    if (*a > *b) {
+        aux = *a;
+        *a = *b;
+        *b = aux;
+    }
 }
 
 int main(){
@@ -52,8 +49,10 @@ int main(){
     printf("Ingrese un numero y de 1 a 10:\n");
     scanf("%d", &y);
 
-    Invertir(x, y);
-    Orden(x, y);
+    Invertir(&x, &y);
+    printf("Los valores invertidos son: %d %d\n", x, y);
+
+    Orden(&x, &y);
 
     printf("Los valores ordenados son: %d %d\n", x, y);
     return 0;
